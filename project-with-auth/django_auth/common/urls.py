@@ -12,5 +12,8 @@ urlpatterns = [
   path('register/', RegisterView.as_view(
         template_name='register.html',  success_url=reverse_lazy('common:index')),
         name='register'),
-  # path('profile-create/', CreateUserProfile.as_view(), name='profile-create'),
+  path('profile-create/', CreateUserProfile.as_view(), name='profile-create'),
+  path('user-create/', CreateUser.as_view(template_name='user-create.html',
+                        success_url=reverse_lazy('common:profile-create')), name='user-create'),
+
 ]
